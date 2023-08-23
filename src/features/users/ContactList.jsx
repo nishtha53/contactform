@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import { deleteUser } from "./contactSlice";
+import SideBar from "../../components/SideBar";
 
 const UserList = () => {
   const dispatch = useDispatch();
@@ -37,10 +38,24 @@ const UserList = () => {
   ))
 
   return (
-    <div>
-      <Link to="/add-contact"><Button>Create Contact</Button></Link>
-      <div className="grid gap-5 md:grid-cols-2">
-        {users.length ? renderCard() : <p className="text-center col-span-2 text-gray-700 font-semibold">No Contacts found! please add contact form from create contact button</p>}
+    
+    <div className="flex flex-col md:flex-row">
+      <SideBar />
+
+      <div className="md:w-2/3 p-5">
+        <Link to="/add-contact">
+          <Button>Create Contact</Button>
+        </Link>
+
+        <div className="grid gap-5 md:grid-cols-2 mt-5">
+          {users.length ? (
+            renderCard()
+          ) : (
+            <p className="col-span-2 text-center text-gray-700 font-semibold">
+              No Contacts found! Please add contacts using the Create Contact button.
+            </p>
+          )}
+        </div>
       </div>
     </div>
   )
