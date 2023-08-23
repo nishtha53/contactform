@@ -39,7 +39,7 @@ const AddUser = () => {
         onChange={(e) => setValues({ ...values, email: e.target.value })}
         inputProps={{ type: 'text', placeholder: 'Thakkar' }}
       />
-      <Button onClick={handleAddUser}>Submit</Button>
+      <Button onClick={handleAddUser}>Save Contact</Button>
     </div>
   )
 }

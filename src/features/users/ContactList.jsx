@@ -4,6 +4,7 @@ import Button from "../../components/Button";
 import { deleteUser } from "./contactSlice";
 import SideBar from "../../components/SideBar";
 
+
 const UserList = () => {
   const dispatch = useDispatch();
   const users = useSelector(store => store.users);
@@ -42,6 +43,7 @@ const UserList = () => {
     <div className="flex flex-col md:flex-row">
       <SideBar />
 
+
       <div className="md:w-2/3 p-5">
         <Link to="/add-contact">
           <Button>Create Contact</Button>
@@ -55,6 +57,7 @@ const UserList = () => {
               No Contacts found! Please add contacts using the Create Contact button.
             </p>
           )}
+        
         </div>
       </div>
     </div>
